@@ -1,0 +1,50 @@
+<!-- market/templates/book_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.name }} Detail</title>
+    <style>
+        /* CSS styles for book card container */
+        .book-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .book-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .book-description {
+            text-align: left; /* Align description text to the left */
+        }
+    </style>
+</head>
+<body>
+    <!-- Display book card with image and description -->
+    <div class="book-card">
+        <!-- Display book image if available -->
+        {% if book.image %}
+            <img src="{{ book.image.url }}" alt="{{ book.name }}">
+        {% endif %}
+
+        <!-- Display book details -->
+        <div class="book-description">
+            <h2>{{ book.name }}</h2>
+            <p>Author: {{ book.author_name }}</p>
+            <p>Category: {{ book.category }}</p>
+            <p>Page Count: {{ book.page_count }}</p>
+            <p>Price: {{ book.price }}</p>
+            <p>{{ book.description }}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -56,9 +56,9 @@ To run the project locally, follow these steps:
 
 ### All books
 All presented books
-![List of Books](images/books/all_books.png)
+![List of Books](images/all_books.png)
 Books with specific author
-![List of Books](images/books/books_by_specific_author.png)
+![List of Books](images/books_by_specific_author.png)
 
 ## Technologies Used
 

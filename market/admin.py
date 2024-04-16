@@ -5,9 +5,9 @@ from market.models import Book, Author, Category
 # Register your models here.
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('name', 'page_count', 'author', 'price', 'cover_type')
+    list_display = ('name', 'author', 'page_count', 'price', 'cover_type')
     search_fields = ('name', 'author')
-    list_filter = ('author_name', 'category', 'book_cover')
+    list_filter = ('author', 'category', 'cover_type')
 
 
 @admin.register(Author)

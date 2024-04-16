@@ -39,8 +39,12 @@
         <!-- Display book details -->
         <div class="book-description">
             <h2>{{ book.name }}</h2>
-            <p>Author: {{ book.author_name }}</p>
-            <p>Category: {{ book.category }}</p>
+            <p>Author: {{ book.author }}</p>
+            <p>Category:
+                {% for category in book.category.all %}
+                    {{ category.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
             <p>Page Count: {{ book.page_count }}</p>
             <p>Price: {{ book.price }}</p>
             <p>{{ book.description }}</p>

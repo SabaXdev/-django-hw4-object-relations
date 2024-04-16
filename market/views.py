@@ -3,7 +3,7 @@ from django.core.paginator import Paginator
 from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404
 
-from market.models import Book
+from market.models import Book, Author, Category
 
 
 class LazyEncoder(DjangoJSONEncoder):
@@ -36,3 +36,18 @@ def view_of_books(request):
 def view_of_one_book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     return render(request, 'one_book.html', {'book': book})
+
+
+def view_of_filtered_books(request):
+    author_id = request.GET.get('author')
+    category_id = request.GET.get('category')
+
+    books = Book.objects.all()
+    authors = Author.objects.all()
+    categories = Category.objects.all()
+
+    if author_id:
+        books = books.filter(author_id=author_id)
+    if category_id:
+        books = books.filter(category__id=category_id)
+    return render(request, 'filtered_books.html', {'books': books, 'authors': authors, 'categories': categories})

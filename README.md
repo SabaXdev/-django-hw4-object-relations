@@ -11,10 +11,12 @@ The project consists of the following components:
 - **Views**: Contains the logic to handle HTTP requests and generate responses. There are two views:
   - `view_of_books`: Displays a paginated list of all books available in the bookstore.
   - `view_of_one_book`: Displays the details of a specific book.
+  - `view_of_filtered_books`: Displays view of filtered books.
 
 - **Templates**: Contains HTML templates for rendering the user interface. There are two templates:
   - `all_books.html`: Displays the list of books with pagination.
   - `one_book.html`: Displays the details of a single book.
+  - `filtered_books.html`: Displays books with filter function.
 
 ## How to Run the Project
 
